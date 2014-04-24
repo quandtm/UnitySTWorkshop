@@ -38,9 +38,9 @@ public class BallController : MonoBehaviour
 
     void OnCollisionEnter(Collision c)
     {
-        var v = rigidbody.velocity;
-        v.x += Random.Range(-1, 1);
-        rigidbody.velocity = v;
+        var adjustment = Random.onUnitSphere;
+        adjustment.z = 0;
+        rigidbody.velocity = rigidbody.velocity + adjustment;
     }
 
     void OnTriggerEnter(Collider other)
