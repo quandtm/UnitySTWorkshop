@@ -19,7 +19,7 @@ public class BallController : MonoBehaviour
         {
             var vel = rigidbody.velocity;
             vel.z = 0;
-            rigidbody.velocity = vel;
+            rigidbody.velocity = vel.normalized * LaunchForce;
         }
         var pos = transform.position;
         pos.z = 0;
@@ -29,7 +29,14 @@ public class BallController : MonoBehaviour
         {
             transform.parent = null;
             rigidbody.isKinematic = false;
-            rigidbody.AddForce(Vector3.up * LaunchForce);
+            rigidbody.velocity = Vector3.up * LaunchForce;
         }
+    }
+
+    void OnCollisionEnter(Collision c)
+    {
+        var v = rigidbody.velocity;
+        v.x += Random.Range(-1, 1);
+        rigidbody.velocity = v;
     }
 }
