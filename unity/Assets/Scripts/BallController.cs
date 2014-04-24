@@ -1,10 +1,12 @@
-﻿using UnityEngine;
+﻿using Assets.Scripts;
+using UnityEngine;
 using System.Collections;
 
 public class BallController : MonoBehaviour
 {
     public GameObject Bat;
     public float LaunchForce;
+    public float ScoreLossOnDeath;
 
     private Vector3 _origOffset;
 
@@ -45,6 +47,7 @@ public class BallController : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        GameManager.Instance.AddScore(-ScoreLossOnDeath);
         Reset();
     }
 

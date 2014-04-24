@@ -23,16 +23,11 @@ namespace Assets.Scripts
             }
         }
 
-        public uint CurrentScore { get; private set; }
+        public int CurrentScore { get; private set; }
 
         public void AddScore(float amount)
         {
-            CurrentScore = CurrentScore + (uint)amount;
-        }
-
-        public void ResetScore()
-        {
-            CurrentScore = 0;
+            CurrentScore = CurrentScore + (int)amount;
         }
     }
 }
