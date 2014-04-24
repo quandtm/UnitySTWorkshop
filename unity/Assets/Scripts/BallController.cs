@@ -6,10 +6,13 @@ public class BallController : MonoBehaviour
     public GameObject Bat;
     public float LaunchForce;
 
+    private Vector3 _origOffset;
+
     // Use this for initialization
     void Start()
     {
-        transform.parent = Bat.transform;
+        // Use localposition to get relative to parent
+        _origOffset = transform.localPosition;
     }
 
     void FixedUpdate()
@@ -38,5 +41,22 @@ public class BallController : MonoBehaviour
         var v = rigidbody.velocity;
         v.x += Random.Range(-1, 1);
         rigidbody.velocity = v;
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        Reset();
+    }
+
+    private void Reset()
+    {
+        if (!rigidbody.isKinematic)
+        {
+            rigidbody.velocity = Vector3.zero;
+            rigidbody.angularVelocity = Vector3.zero;
+            rigidbody.isKinematic = true;
+        }
+        transform.parent = Bat.transform;
+        transform.localPosition = _origOffset;
     }
 }
