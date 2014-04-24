@@ -20,9 +20,13 @@ public class PaddleController : MonoBehaviour
         var delta = Speed * Time.deltaTime;
 
         if (Input.GetKey(KeyCode.LeftArrow))
+        {
             currentPos.x -= delta;
+        }
         else if (Input.GetKey(KeyCode.RightArrow))
+        {
             currentPos.x += delta;
+        }
 
         if (currentPos.x < MinX)
             currentPos.x = MinX;
