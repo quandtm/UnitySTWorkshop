@@ -6,3 +6,5 @@
 Assembly-CSharp*
 *.suo
 *.dotsettings
+
+UnityVS.unity.*
