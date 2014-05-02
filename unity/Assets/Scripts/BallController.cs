@@ -27,6 +27,9 @@ public class BallController : MonoBehaviour
             rigidbody.velocity = vel.normalized * LaunchForce;
         }
         var pos = transform.position;
+        var n = pos.normalized;
+        pos.x += n.x * pos.z;
+        pos.y += n.y * pos.z;
         pos.z = 0;
         transform.position = pos;
 
@@ -55,8 +58,9 @@ public class BallController : MonoBehaviour
     {
         if (!rigidbody.isKinematic)
         {
-            rigidbody.velocity = Vector3.zero;
+            rigidbody.rotation = Quaternion.identity;
             rigidbody.angularVelocity = Vector3.zero;
+            rigidbody.velocity = Vector3.zero;
             rigidbody.isKinematic = true;
         }
         transform.parent = Bat.transform;
