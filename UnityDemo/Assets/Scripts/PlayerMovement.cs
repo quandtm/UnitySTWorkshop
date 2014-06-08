@@ -3,7 +3,7 @@ using System.Collections;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float Power = 10;
+    public float Power = 40;
     public float JumpPower = 300;
 
     // Use this for initialization
