@@ -18,12 +18,14 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetAxis("Vertical") > 0)
         {
             var forward = transform.position - Camera.main.transform.position;
+            forward.y = 0;
             forward.Normalize();
             rigidbody.AddForce(forward * (Power * Time.deltaTime));
         }
         else if (Input.GetAxis("Vertical") < 0)
         {
             var backward = Camera.main.transform.position - transform.position;
+            backward.y = 0;
             backward.Normalize();
             rigidbody.AddForce(backward * (Power * Time.deltaTime));
         }
