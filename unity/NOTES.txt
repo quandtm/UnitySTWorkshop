@@ -1,7 +1,0 @@
-Bouncy
-Create physic material in project
-Add to ball
-set bounce combine to maximum otherwise it averages with the other object and you get a much smaller value
-set bounciness to 1 (for infinite bouncing)
-set mass to 0.5
-ensure launch force is 100
