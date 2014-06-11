@@ -9,3 +9,13 @@ Assembly-CSharp*
 
 UnityVS.unity.*
 ~*
+
+Windows81Solution/UnityCommon.props
+Windows81Solution/Players/*
+Windows81Solution/UnityDemo/Data/*
+Windows81Solution/UnityDemo/bin/*
+Windows81Solution/UnityDemo/obj/*
+Windows81Solution/UnityDemo/Unprocessed/*
+*.csproj.user
+
+UnityDemo/Assets/MetroTestCertificate.pfx*
