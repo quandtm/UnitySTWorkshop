@@ -19,3 +19,7 @@ Windows81Solution/UnityDemo/Unprocessed/*
 *.csproj.user
 
 UnityDemo/Assets/MetroTestCertificate.pfx*
+UnityDemo/bin/*
+
+*.dll
+*.pdb
